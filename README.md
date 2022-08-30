@@ -1,4 +1,4 @@
-# Biz Site - NodeJS Final Project
+# Biz Site - Server Side (nodeJS project)
 
 The projects consist of two parts
 
@@ -34,6 +34,7 @@ the body of the request should consist of the following keys:
     3. password - the password of the user to log in
     4. biz - is the user a business user? boolean value
 
+![POST request screenshot](https://github.com/OriGuyUniqueDev/Biz-Site-BackEnd/blob/main/public/images/postRegister.png?raw=true)
 #### Log in
 
 ```http
@@ -48,6 +49,9 @@ the body of the request should consist of the following keys:
     1. email
     2. password
 
+
+![POST login screenshot](https://github.com/OriGuyUniqueDev/Biz-Site-BackEnd/blob/main/public/images/postLignin.png?raw=true)
+
 ```http
 GET  /api/login
 ```
@@ -55,6 +59,8 @@ GET  /api/login
 At the POST method of the login, you received a JWT token you need to get the data.
 the server will return an object with the details of the user that related to the given JWT token
 the Authorization of the request should include the JWT token
+
+![post request screenshot](https://github.com/OriGuyUniqueDev/Biz-Site-BackEnd/blob/main/public/images/getLogin.png?raw=true)
 
 #### Add Business Card
 
@@ -72,6 +78,8 @@ the body of the request should include the following keys:
     3. Address
     4. Telephone Number
     5. Url Image
+
+![post request screenshot](https://github.com/OriGuyUniqueDev/Biz-Site-BackEnd/blob/main/public/images/postAddBizCard.png?raw=true)
 
 #### Get Business Card
 
@@ -94,6 +102,8 @@ the body of the request should include the following keys:
 | :---------- | :---------- | :----------------------------------------- |
 | `bizCardID` | `bizCardID` | **Required**. Id of business card to fetch |
 
+![GET login screenshot](https://github.com/OriGuyUniqueDev/Biz-Site-BackEnd/blob/main/public/images/getBizCard.png?raw=true)
+
 #### Update Business Card
 
 ```http
@@ -112,6 +122,8 @@ the body of the request should have the following keys:
 | :---------- | :---------- | :----------------------------------------- |
 | `bizCardID` | `bizCardID` | **Required**. Id of business card to fetch |
 
+![PUT request screenshot](https://github.com/OriGuyUniqueDev/Biz-Site-BackEnd/blob/main/public/images/updateBizCard.png?raw=true)
+
 #### Delete Business Card
 
 ```http
@@ -125,6 +137,8 @@ the Authorization of the request should include the JWT token
 | Parameter   | Type        | Description                                |
 | :---------- | :---------- | :----------------------------------------- |
 | `bizCardID` | `bizCardID` | **Required**. Id of business card to fetch |
+
+![DELETE request screenshot](https://github.com/OriGuyUniqueDev/Biz-Site-BackEnd/blob/main/public/images/deketeBizCard.png?raw=true)
 
 #### Get User Business Card or Cards
 
@@ -140,7 +154,9 @@ the Authorization of the request should include the JWT token
 | :---------- | :---------- | :----------------------------------------- |
 | `bizCardID` | `bizCardID` | **Required**. Id of business card to fetch |
 
-#### Get User Business Card or Cards
+![GET User Business Card or Cards screenshot](https://github.com/OriGuyUniqueDev/Biz-Site-BackEnd/blob/main/public/images/getUserBixCard.png?raw=true)
+
+#### Get All Cards
 
 ```http
 GET  /api/getAllCards/
@@ -149,3 +165,41 @@ GET  /api/getAllCards/
 At the POST method of the login, you received a JWT token you need to add the data.
 The server will send all the cards from the database.
 The Authorization of the request should include the JWT token
+
+![GET All Cards screenshot](https://github.com/OriGuyUniqueDev/Biz-Site-BackEnd/blob/main/public/images/getAllCards.png?raw=true)
+
+The file '/requests.rest' is demo file with requests
+
+
+## Run Locally
+
+Clone the project
+
+```bash
+  git clone git@github.com:OriGuyUniqueDev/Biz-Site-BackEnd.git
+```
+
+Go to the project directory
+
+```bash
+  cd Biz-Site-BackEnd
+```
+
+Install dependencies
+
+```bash
+  npm install
+```
+
+Start the server
+
+```bash
+  npm run server
+```
+
+
+## Authors
+
+- [@OriGuyUniqueDev](https://github.com/OriGuyUniqueDev)
+
+
