@@ -22,7 +22,7 @@ The API contains the actions below:
 #### Register
 
 ```http
-  POST  /api/register
+POST  /api/register
 ```
 
 The data comes from the front-end side.
