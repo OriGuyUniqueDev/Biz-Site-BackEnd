@@ -176,7 +176,7 @@ The file '/requests.rest' is demo file with requests
 Clone the project
 
 ```bash
-  git clone git@github.com:OriGuyUniqueDev/Biz-Site-BackEnd.git
+  git clone https://github.com/OriGuyUniqueDev/Biz-Site-BackEnd.git
 ```
 
 Go to the project directory
