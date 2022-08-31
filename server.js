@@ -29,7 +29,7 @@ app.use('/api/getUserBizCard',getUserBizCard)
 app.use('/api/getAllCards',getAllCards)
 app.use('/api/pageNotFound',pageNotFound)
 
-mongoose.connect("mongodb://localhost:27017/final-node-project").then(() => console.log("Connected to MongoDB")).catch((err) => console.log(`couldn't Connect to MongoDB : ${err}`));
+mongoose.connect("mongodb://localhost:27017/biz-site-backend").then(() => console.log("Connected to MongoDB")).catch((err) => console.log(`couldn't Connect to MongoDB : ${err}`));
 
 
 

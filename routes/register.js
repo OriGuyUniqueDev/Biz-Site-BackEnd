@@ -41,7 +41,7 @@ schema.methods.generateAuthToken = async function () {
 
     return token
 }
-const User = mongoose.model("users", schema);
+const User = new mongoose.model("users", schema);
 
 
 router.post("/", async (req, res) => {

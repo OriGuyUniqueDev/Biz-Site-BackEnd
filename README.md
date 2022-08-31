@@ -84,7 +84,7 @@ the body of the request should include the following keys:
 #### Get Business Card
 
 ```http
-POST  /api/getBizCard/:bizCardID
+GET  /api/getBizCard/:bizCardID
 ```
 
 At the POST method of the login, you received a JWT token you need to add the data.
