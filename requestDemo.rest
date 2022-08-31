@@ -1,0 +1,79 @@
+#  *-* Register *-* 
+POST  http://localhost:5000/api/register
+Content-Type: application/json
+
+{
+    "name": "John Doe",
+    "email": "johndoe@fakemail.com",  
+    "password": "fakePass123",  
+    "biz": true  
+}
+
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzBmMzExZGU0ZTVmZmFjYjdkM2RlNzYiLCJiaXoiOnRydWUsImlhdCI6MTY2MTkzOTk5N30._jTJ6HAEV1cH-fq2JM9EPspE641Cu5iGfnLESOng8c0
+
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzBmMzExZGU0ZTVmZmFjYjdkM2RlNzYiLCJiaXoiOnRydWUsImlhdCI6MTY2MTk0MDA0M30.I2zvWoe-YzwfKIh2GLXcEFKbvKaY9T7oxQwob4_bLaU
+
+user:  630f311de4e5ffacb7d3de76
+
+###
+
+#  *-* Log in *-* 
+
+POST  http://localhost:5000/api/login
+Content-Type: application/json
+
+{
+    "email": "johndoe@fakemail.com",
+    "password": "fakePass123"  
+}
+
+###
+
+#  *-* addBizCard *-* 
+POST    http://localhost:5000/api/addBizCard
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzBmMmJkZGE4ZTliOWE4MzliZGNmYTgiLCJiaXoiOnRydWUsImlhdCI6MTY2MTkzOTIwN30.ylkOGlhfRFEJBEqJd1zpOdCd-b0CVhco264B6dFNuuY
+
+{
+    "bizName": "John Web",
+    "description": "The internet is a great place to find and share information, but it's not always the best place to for your company's digital communications and marketing campaigns. We here to make sure your digital footprint is the best 💖",
+    "address": "Beer Sheva, Israel",
+    "tel": "0541111111",
+    "img": "https://images.pexels.com/photos/617278/pexels-photo-617278.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+}
+###
+
+#  *-* getBizCard *-* 
+GET     http://localhost:5000/api/getBizCard/630f2e0da8e9b9a839bdcfaf
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzBmMmJkZGE4ZTliOWE4MzliZGNmYTgiLCJiaXoiOnRydWUsImlhdCI6MTY2MTkzOTY2MH0.OGfICAMnmQtdWngJfnRRWggM9BnLstHUyrzt-yxoeZs
+
+###
+
+#  *-* updateBizCard *-* 
+PUT   http://localhost:5000/api/updateBizCard/630f2e0da8e9b9a839bdcfaf
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzBmMmJkZGE4ZTliOWE4MzliZGNmYTgiLCJiaXoiOnRydWUsImlhdCI6MTY2MTkzOTY2MH0.OGfICAMnmQtdWngJfnRRWggM9BnLstHUyrzt-yxoeZs
+
+{
+    "keyToUpdate": "tel",
+    "value": "0542222222"
+}
+
+###
+
+#  *-* deleteBizCard *-* 
+DELETE    http://localhost:5000/api/deleteBizCard/630f2e0da8e9b9a839bdcfaf
+Authorization: Bearer JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzBmMmJkZGE4ZTliOWE4MzliZGNmYTgiLCJiaXoiOnRydWUsImlhdCI6MTY2MTkzOTY2MH0.OGfICAMnmQtdWngJfnRRWggM9BnLstHUyrzt-yxoeZs
+
+###
+
+#  *-* getUserBizCard *-* 
+GET    http://localhost:5000/api/getUserBizCard/630f2bdda8e9b9a839bdcfa8
+Authorization: Bearer JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzBmMmJkZGE4ZTliOWE4MzliZGNmYTgiLCJiaXoiOnRydWUsImlhdCI6MTY2MTkzOTY2MH0.OGfICAMnmQtdWngJfnRRWggM9BnLstHUyrzt-yxoeZs
+
+###
+
+#  *-* getAllCards *-* 
+GET    http://localhost:5000/api/getAllCards/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzBmMzExZGU0ZTVmZmFjYjdkM2RlNzYiLCJiaXoiOnRydWUsImlhdCI6MTY2MTk0MDA0M30.I2zvWoe-YzwfKIh2GLXcEFKbvKaY9T7oxQwob4_bLaU
+###

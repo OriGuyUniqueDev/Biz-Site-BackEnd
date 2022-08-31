@@ -168,7 +168,7 @@ The Authorization of the request should include the JWT token
 
 ![GET All Cards screenshot](https://github.com/OriGuyUniqueDev/Biz-Site-BackEnd/blob/main/public/images/getAllCards.png?raw=true)
 
-The file '/requests.rest' is demo file with requests
+The file '/requestDemo.rest' is demo file with requests
 
 
 ## Run Locally
@@ -197,6 +197,15 @@ Start the server
   npm run server
 ```
 
+## Tech Stack
+
+
+**Server:** Node, Express, Joi, Mongoose (MongoDB), lodash, bcrypt and JWT. 
+
+
+## Feedback
+
+If you have any feedback, please reach out to me at origuydev@gmail.com.
 
 ## Authors
 
