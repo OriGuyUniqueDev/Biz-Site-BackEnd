@@ -1,14 +1,12 @@
 const express = require("express");
 const functions = require("../globalFuncAndVariables");
 const bcrypt = require('bcrypt');
-const {User} = require('./register')
-const mongoose = require("mongoose");
-const jwt = require('jsonwebtoken');
+const User = require('../models/User')
 const _ = require('lodash');
 const auth = require('../middleware/auth')
+const Joi = require("joi");
 
 const router = express.Router()
-const Joi = require("joi");
 
 const formJoiSchema = Joi.object({
     email: Joi.string().email().required(),
@@ -16,42 +14,38 @@ const formJoiSchema = Joi.object({
 })
 
 router.get('/',auth,async (req,res) => {
-   let userData = await User.findById(res.locals.user._id)
-   res.status(200).send(_.pick(userData,['name','email','biz'])) 
-})
-
-router.post('/',async (req,res) => {
-    let isValidated = await functions.validateData(req.body,res,formJoiSchema)
-    let user = await User.find({email: req.body.email})
-
-    if (isValidated === undefined && user.length !== 0) {
-         await validateDataForLogin(req.body,user[0],res)
-      
-    }else{
-       
-        res.status(400).send('Oops Error ❌: ' + 'We cant find the user: ' + req.body.email); 
+    try {
+        //* search for the user in DB
+        let userData = await User.findById(res.locals.user._id)
+        res.status(200).send(_.pick(userData,['name','email','biz'])) 
+    } catch (error) {
+        return res.status(400).send("error in GET login: " + error);
     }
 })
 
-async function validateDataForLogin(jsonData,user,res) {
+router.post('/',async (req,res) => {
+    try {
+        //* validate user input
+        let errorJoi = await functions.validateData(req.body,formJoiSchema);
+		if (errorJoi) return res.status(400).send("Oops Error ❌: " + errorJoi.details[0].message);
 
-    let isPassMatch = await bcrypt.compare(jsonData.password,user.password).then(res => res)
+        //* serach and find the user
+        let user = await User.findOne({email: req.body.email})
+        if(!user) return res.status(404).send(`Oops Error ❌: The user: ${req.body.email} not Found`);
+        //* check passwords and return the data
+        let isPassMatch = await bcrypt.compare(req.body.password,user.password).then(res => res)
+        if(!isPassMatch) return res.status(400).send('Oops Error ❌: ' + 'Email or Password is incorrect, try again 🤞🏼 ')
 
-    if (!isPassMatch) return res.status(400).send('Oops Error ❌: ' + 'Email or Password is incorrect, try again 🤞🏼 '); 
-
-    let accessToken = await user.generateAuthToken()
-
-    res.status(200).json(
-        {
+        let accessToken = await user.generateAuthToken()
+        return res.status(200).send({
             _id: user._id,
             biz: user.biz,
             token: accessToken
-        }
-    )
-
-
-   
-}
+        })
+    } catch (error) {
+        return res.status(400).send("error in POST login: " + error);
+    }
+})
 
 
 module.exports =  router
