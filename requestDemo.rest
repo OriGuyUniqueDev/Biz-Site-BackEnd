@@ -23,14 +23,14 @@ Content-Type: application/json
 
 ###
 GET  http://localhost:5000/api/login
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzEwMjJlY2E5Mzc1MGM5ZjM4NGM2ZWIiLCJiaXoiOnRydWUsImlhdCI6MTY2MjAwMTkwMX0.p08Zp-0leM-drSfgFXTASsJAwdZe_joGwoG9p8niYhI
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzEwMjJlY2E5Mzc1MGM5ZjM4NGM2ZWIiLCJiaXoiOnRydWUsImlhdCI6MTY3MjU5MzI5OH0.dMZ2T4r4ojl_itxHh1RYV0TBjqlTjCghz79bu-634nA
 
 ###
 
 #  *-* addBizCard *-* 
 POST    http://localhost:5000/api/addBizCard
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzBmYjQ5MWJjZjc3ZjczOGQ3MjQwYzUiLCJiaXoiOnRydWUsImlhdCI6MTY2MTk3MzY0OX0.-IXDP97G24K-Gs-87MJJkOIkz-S7FdhiYhiMt4e8xfc
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzEwMjJlY2E5Mzc1MGM5ZjM4NGM2ZWIiLCJiaXoiOnRydWUsImlhdCI6MTY3MjU5MzI5OH0.dMZ2T4r4ojl_itxHh1RYV0TBjqlTjCghz79bu-634nA
 
 {
     "bizName": "John Web",
@@ -43,14 +43,14 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzBmYjQ5M
 
 #  *-* getBizCard *-* 
 GET     http://localhost:5000/api/getBizCard/6310daebc3d516026c4e5a37
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzBmYjQ5MWJjZjc3ZjczOGQ3MjQwYzUiLCJiaXoiOnRydWUsImlhdCI6MTY2MTk3MzY0OX0.-IXDP97G24K-Gs-87MJJkOIkz-S7FdhiYhiMt4e8xfc
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzEwMjJlY2E5Mzc1MGM5ZjM4NGM2ZWIiLCJiaXoiOnRydWUsImlhdCI6MTY3MjU5MzI5OH0.dMZ2T4r4ojl_itxHh1RYV0TBjqlTjCghz79bu-634nA
 
 ###
 
 #  *-* updateBizCard *-* 
 PUT   http://localhost:5000/api/updateBizCard/6310daebc3d516026c4e5a38
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzBmYjQ5MWJjZjc3ZjczOGQ3MjQwYzUiLCJiaXoiOnRydWUsImlhdCI6MTY2MTk3MzY0OX0.-IXDP97G24K-Gs-87MJJkOIkz-S7FdhiYhiMt4e8xfc
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzEwMjJlY2E5Mzc1MGM5ZjM4NGM2ZWIiLCJiaXoiOnRydWUsImlhdCI6MTY3MjU5MzI5OH0.dMZ2T4r4ojl_itxHh1RYV0TBjqlTjCghz79bu-634nA
 
 {
     "keyToUpdate": "tel",
@@ -61,19 +61,19 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzBmYjQ5M
 
 #  *-* deleteBizCard *-* 
 DELETE    http://localhost:5000/api/deleteBizCard/6310daebc3d516026c4e5a37
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzBmYjQ5MWJjZjc3ZjczOGQ3MjQwYzUiLCJiaXoiOnRydWUsImlhdCI6MTY2MTk3MzY0OX0.-IXDP97G24K-Gs-87MJJkOIkz-S7FdhiYhiMt4e8xfc
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzEwMjJlY2E5Mzc1MGM5ZjM4NGM2ZWIiLCJiaXoiOnRydWUsImlhdCI6MTY3MjU5MzI5OH0.dMZ2T4r4ojl_itxHh1RYV0TBjqlTjCghz79bu-634nA
 
 
 ###
 
 #  *-* getUserBizCard *-* 
 GET    http://localhost:5000/api/getUserBizCard/630fb491bcf77f738d7240c5
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzBmYjQ5MWJjZjc3ZjczOGQ3MjQwYzUiLCJiaXoiOnRydWUsImlhdCI6MTY2MTk3MzY0OX0.-IXDP97G24K-Gs-87MJJkOIkz-S7FdhiYhiMt4e8xfc
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzEwMjJlY2E5Mzc1MGM5ZjM4NGM2ZWIiLCJiaXoiOnRydWUsImlhdCI6MTY3MjU5MzI5OH0.dMZ2T4r4ojl_itxHh1RYV0TBjqlTjCghz79bu-634nA
 
 
 ###
 
 #  *-* getAllCards *-* 
 GET    http://localhost:5000/api/getAllCards/
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzBmMzExZGU0ZTVmZmFjYjdkM2RlNzYiLCJiaXoiOnRydWUsImlhdCI6MTY2MTk0MDA0M30.I2zvWoe-YzwfKIh2GLXcEFKbvKaY9T7oxQwob4_bLaU
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzEwMjJlY2E5Mzc1MGM5ZjM4NGM2ZWIiLCJiaXoiOnRydWUsImlhdCI6MTY3MjU5MzI5OH0.dMZ2T4r4ojl_itxHh1RYV0TBjqlTjCghz79bu-634nA
 ###
