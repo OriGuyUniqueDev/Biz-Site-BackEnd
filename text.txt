@@ -1,0 +1,23 @@
+
+{
+  "title": "Eilat Dive Center",
+  "subTitle": "Scuba Diving & Snorkeling",
+  "description": "Explore the underwater world of the Red Sea at Eilat Dive Center. From scuba diving to snorkeling, we offer a range of activities for all levels of experience.",
+  "address": {
+    "state": "Eilat",
+    "city": "Eilat",
+    "street": "North Beach Road",
+    "houseNumber": "246",
+    "zip": "88111"
+  },
+  "image": {
+    "url": "https://eilatdivecenter.co.il/img/logo.png",
+    "alt": "Eilat Dive Center logo"
+  },
+  "bizNumber": "444-444-444",
+  "phone": "+972-555-555-5558",
+  "likes": 2000,
+  "web": "https://eilatdivecenter.co.il",
+  "email": "info@eilatdivecenter.co.il",
+  "createdAt": "2023-01-30T12:00:00Z"
+}

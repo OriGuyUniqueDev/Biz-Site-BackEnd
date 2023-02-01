@@ -1,7 +1,7 @@
 const express = require("express");
 const bcrypt = require("bcrypt");
 const User = require("../models/User");
-const functions = require('../globalFuncAndVariables')
+const functions = require("../globalFuncAndVariables");
 
 const saltRounds = 10;
 const Joi = require("joi");
@@ -9,7 +9,7 @@ const router = express.Router();
 
 // define Joi Scheme to validate the data
 const formJoiSchema = Joi.object({
-	name: Joi.string().min(2).max(12).required(),
+	name: Joi.string().min(2).max(30).required(),
 	email: Joi.string().email().required(),
 	password: Joi.string().min(6).max(12).required(),
 	biz: Joi.boolean().required(),
@@ -18,7 +18,7 @@ const formJoiSchema = Joi.object({
 router.post("/", async (req, res) => {
 	try {
 		// * validate user input
-		let errorJoi = await functions.validateData(req.body,formJoiSchema);
+		let errorJoi = await functions.validateData(req.body, formJoiSchema);
 		if (errorJoi) return res.status(400).send("Oops Error ❌: " + errorJoi.details[0].message);
 
 		//*check if user exists in database
@@ -39,8 +39,5 @@ router.post("/", async (req, res) => {
 		return res.status(400).send("error in register the user: " + error);
 	}
 });
-
-
-
 
 module.exports = router;

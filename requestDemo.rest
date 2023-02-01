@@ -30,15 +30,32 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzEwMjJlY
 #  *-* addBizCard *-* 
 POST    http://localhost:5000/api/addBizCard
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzBmYjQ5MWJjZjc3ZjczOGQ3MjQwYzUiLCJiaXoiOnRydWUsImlhdCI6MTY2MTk3MzY0OX0.-IXDP97G24K-Gs-87MJJkOIkz-S7FdhiYhiMt4e8xfc
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2Q3ZTY1MmIwY2UxNTk3N2JkMGUyZDciLCJiaXoiOnRydWUsImlhdCI6MTY3NTA5MzU4Nn0.cltplQqo4CCEmJxwXYgADnM_NE6b9e2OcF6whvo-Nqg
 
-{
-    "bizName": "John Web",
-    "description": "The internet is a great place to find and share information, but it's not always the best place to for your company's digital communications and marketing campaigns. We here to make sure your digital footprint is the best 💖",
-    "address": "Beer Sheva, Israel",
-    "tel": "0541111111",
-    "img": "https://images.pexels.com/photos/617278/pexels-photo-617278.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+
+   {
+   "title": "Bright Smile Dental",
+    "subTitle": "Family and Cosmetic Dentistry",
+    "description": "Bright Smile Dental provides comprehensive dental care for the whole family. Our experienced dentists offer a range of services, including cosmetic dentistry, to help you achieve a brighter, healthier smile.",
+    "address": {
+      "state": "California",
+      "city": "San Francisco",
+      "street": "Market Street",
+      "houseNumber": "456",
+      "zip": "94102"
+    },
+    "image": {
+      "url": "https://brightsmiledental.com/img/logo.png",
+      "alt": "Bright Smile Dental logo"
+    },
+    "bizNumber": "987654321",
+    "phone": "+1-555-555-5556",
+    "likes": ["f","f","f","f","f"],
+    "web": "https://brightsmiledental.com",
+    "email": "info@brightsmiledental.com",
+    "createdAt": "2023-01-30T12:00:00Z"
 }
+
 ###
 
 #  *-* getBizCard *-* 

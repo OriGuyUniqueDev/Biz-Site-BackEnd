@@ -8,15 +8,35 @@ const _ = require("lodash");
 const router = express.Router();
 
 const formJoiSchema = Joi.object({
-	bizName: Joi.string().min(2).max(30).required(),
+	title: Joi.string().min(2).max(30).required(),
+	subTitle: Joi.string().min(2).max(30).required(),
 	description: Joi.string().min(10).max(1000).required(),
-	address: Joi.string().min(2).max(20).required(),
-	tel: Joi.string()
-		.regex(/^05\d{8}$/)
-		.max(10)
-		.required(),
-	img: Joi.string().min(10).required(),
+	address: Joi.object({
+		state: Joi.string().min(2).max(30).required(),
+		city: Joi.string().min(2).max(30).required(),
+		street: Joi.string().min(2).max(30).required(),
+		houseNumber: Joi.number().integer(),
+		zip: Joi.string().min(5),
+	}),
+	image: Joi.object({
+		url: Joi.string().min(10).required(),
+		alt: Joi.string().min(2).required(),
+	}),
+	bizNumber: Joi.string().min(2).max(30).required(),
+	phone: Joi.string().min(10).required(),
+	likes: Joi.array(),
+	web: Joi.string().min(10).required(),
+	email: Joi.string().email().required(),
+	createdAt: Joi.date(),
 });
+// bizName: Joi.string().min(2).max(30).required(),
+// 	description: Joi.string().min(10).max(1000).required(),
+// 	address: Joi.string().min(2).max(20).required(),
+// 	tel: Joi.string()
+// 		.regex(/^05\d{8}$/)
+// 		.max(10)
+// 		.required(),
+// 	img: Joi.string().min(10).required(),
 
 router.post("/", auth, async (req, res) => {
 	// * validate user input
@@ -28,7 +48,11 @@ router.post("/", auth, async (req, res) => {
 	cardData.uniqueNum = await findUniqueNumber(_.random(0, 1500, false));
 	cardData.userId = res.locals.user._id;
 	let card = new Cards(cardData);
-	await card.save().then(result => res.status(201).send("The card has been added ✅: " + result)).catch(err => res.status(400).send("The card has not been added ❌: " + err));
+	console.log(card);
+	await card
+		.save()
+		.then((result) => res.status(201).send("The card has been added ✅: " + result))
+		.catch((err) => res.status(400).send("The card has not been added ❌: " + err));
 });
 
 async function findUniqueNumber(randomNum) {
@@ -39,11 +63,10 @@ async function findUniqueNumber(randomNum) {
 			random = _.random(0, 1500, false);
 			findUniqueNumber(random);
 		}
-		return random 
+		return random;
 	} catch (error) {
 		return res.status(400).send("error in register the user: " + error);
 	}
-	
 }
 
 module.exports = router;
