@@ -8,11 +8,22 @@ const Joi = require("joi");
 const router = express.Router();
 
 // define Joi Scheme to validate the data
+const URLTOMATCH = new RegExp(/^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/);
 const formJoiSchema = Joi.object({
-	name: Joi.string().min(2).max(30).required(),
 	email: Joi.string().email().required(),
 	password: Joi.string().min(6).max(12).required(),
 	biz: Joi.boolean().required(),
+	firstName: Joi.string().min(2).required(),
+	lastName: Joi.string().min(2).required(),
+	state: Joi.string().min(0),
+	country: Joi.string().min(2).required(),
+	city: Joi.string().min(2).required(),
+	street: Joi.string().min(2).required(),
+	houseNumber: Joi.number().integer().required(),
+	zip: Joi.string().min(0),
+	phone: Joi.string().min(10).required(),
+	imgAlt: Joi.string().min(0),
+	imgUrl: Joi.string().min(0),
 });
 
 router.post("/", async (req, res) => {

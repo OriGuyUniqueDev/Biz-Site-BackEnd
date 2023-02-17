@@ -1,23 +1,62 @@
-
-{
-  "title": "Eilat Dive Center",
-  "subTitle": "Scuba Diving & Snorkeling",
-  "description": "Explore the underwater world of the Red Sea at Eilat Dive Center. From scuba diving to snorkeling, we offer a range of activities for all levels of experience.",
-  "address": {
-    "state": "Eilat",
-    "city": "Eilat",
-    "street": "North Beach Road",
-    "houseNumber": "246",
-    "zip": "88111"
+[
+  {
+    "name": "Avital Cohen",
+    "email": "avital.cohen@gmail.com",
+    "password": "Avi12345",
+    "biz": true
   },
-  "image": {
-    "url": "https://eilatdivecenter.co.il/img/logo.png",
-    "alt": "Eilat Dive Center logo"
+  {
+    "name": "Daniel Smith",
+    "email": "danielsmith@yahoo.com",
+    "password": "DanS12345",
+    "biz": false
   },
-  "bizNumber": "444-444-444",
-  "phone": "+972-555-555-5558",
-  "likes": 2000,
-  "web": "https://eilatdivecenter.co.il",
-  "email": "info@eilatdivecenter.co.il",
-  "createdAt": "2023-01-30T12:00:00Z"
-}
+  {
+    "name": "Sarah Johnson",
+    "email": "sarahj@hotmail.com",
+    "password": "SarahJ12345",
+    "biz": true
+  },
+  {
+    "name": "David Greenberg",
+    "email": "dgreenberg@gmail.com",
+    "password": "DavidG12345",
+    "biz": true
+  },
+  {
+    "name": "Lena Klein",
+    "email": "lena.klein@yahoo.com",
+    "password": "LenaK12345",
+    "biz": false
+  },
+  {
+    "name": "John Doe",
+    "email": "johndoe@hotmail.com",
+    "password": "JohnD12345",
+    "biz": false
+  },
+  {
+    "name": "Noga Perez",
+    "email": "nogaperez@gmail.com",
+    "password": "NogaP12345",
+    "biz": true
+  },
+  {
+    "name": "Emily Brown",
+    "email": "emilybrown@yahoo.com",
+    "password": "EmilyB12345",
+    "biz": false
+  },
+  {
+    "name": "Michael Scott",
+    "email": "michaelscott@hotmail.com",
+    "password": "MichaelS12345",
+    "biz": true
+  },
+  {
+    "name": "Alena Petrov",
+    "email": "alenapetrov@gmail.com",
+    "password": "AlenaP12345",
+    "biz": false
+  }
+]

@@ -30,8 +30,8 @@ app.use("/api/getAllCards", getAllCards);
 app.use("*", pageNotFound);
 
 mongoose
-	.connect("mongodb://localhost:27017/biz-site-backend")
-	.then(() => console.log("Connected to MongoDB"))
+	.connect(`mongodb+srv://origuydev:${process.env.SERVER_PASSWORD}@fullstackreactbcard.ojrla6s.mongodb.net/businessCardsProject?retryWrites=true&w=majority`)
+	.then((res) => console.log(res.connections[0].name))
 	.catch((err) => console.log(`couldn't Connect to MongoDB : ${err}`));
 
 app.listen(PORT, () => console.log(`http://localhost:${PORT}`));
