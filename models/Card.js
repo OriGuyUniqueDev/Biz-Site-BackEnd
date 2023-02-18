@@ -1,24 +1,36 @@
 let mongoose = require("mongoose");
 
 let cardSchema = new mongoose.Schema({
-	title: String,
-	subTitle: String,
-	description: String,
-	address: {
-		state: String,
-		city: String,
-		street: String,
-		houseNumber: Number,
-		zip: Number,
+	firstName: String,
+	lastName: String,
+	state: {
+		type: String,
+		required: false,
 	},
-	image: { url: String, alt: String },
-	bizNumber: String,
-	phone: String,
-	likes: [String],
-	web: String,
+	country: String,
+	city: String,
+	street: String,
+	houseNumber: Number,
+	zip: {
+		type: String,
+		required: false,
+	},
 	email: String,
-	createdAt: String,
-	uniqueNum: Number,
+	password: String,
+	phone: String,
+	imgUrl: {
+		type: String,
+		required: false,
+	},
+	imgAlt: {
+		type: String,
+		required: false,
+	},
+	biz: Boolean,
+	bizName: {
+		type: Boolean,
+		required: false,
+	},
 	userId: mongoose.ObjectId,
 });
 

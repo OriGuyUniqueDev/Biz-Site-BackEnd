@@ -57,6 +57,10 @@ let userSchema = new mongoose.Schema({
 		type: Boolean,
 		required: true,
 	},
+	bizName: {
+		type: String,
+		required: false,
+	},
 });
 
 // add method to schema to add token to user documents

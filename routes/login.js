@@ -17,7 +17,6 @@ router.get("/", auth, async (req, res) => {
 	try {
 		//* search for the user in DB
 		let userData = await User.findById(res.locals.user._id);
-		console.log(userData);
 		// res.status(200).send(_.pick(userData, ["name", "email", "biz"]));
 		res.status(200).send(userData);
 	} catch (error) {

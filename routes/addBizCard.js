@@ -48,7 +48,6 @@ router.post("/", auth, async (req, res) => {
 	cardData.uniqueNum = await findUniqueNumber(_.random(0, 1500, false));
 	cardData.userId = res.locals.user._id;
 	let card = new Cards(cardData);
-	console.log(card);
 	await card
 		.save()
 		.then((result) => res.status(201).send("The card has been added ✅: " + result))
