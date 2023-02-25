@@ -30,11 +30,11 @@ router.post("/", async (req, res) => {
 	try {
 		// * validate user input
 		let errorJoi = await functions.validateData(req.body, formJoiSchema);
-		if (errorJoi) return res.status(400).send("Oops Error ❌: " + errorJoi.details[0].message);
+		if (errorJoi) return res.status(400).send(" " + errorJoi.details[0].message);
 
 		//*check if user exists in database
 		let user = await User.findOne({ email: req.body.email });
-		if (user) return res.status(400).send("Oops Error ❌: User already exists");
+		if (user) return res.status(400).send(" User already exists");
 
 		//*add new user
 		user = new User(req.body);

@@ -1,3 +1,4 @@
+const { number } = require("joi");
 let mongoose = require("mongoose");
 
 let cardSchema = new mongoose.Schema({
@@ -28,9 +29,22 @@ let cardSchema = new mongoose.Schema({
 	},
 	biz: Boolean,
 	bizName: {
-		type: Boolean,
+		type: String,
 		required: false,
 	},
+	bizField: {
+		type: String,
+		required: false,
+	},
+	uniqueNum: {
+		type: Number,
+		required: true,
+	},
+	likes: {
+		type: Array,
+		required: true,
+	},
+
 	userId: mongoose.ObjectId,
 });
 

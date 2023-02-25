@@ -22,21 +22,19 @@ router.put("/:cardBizID", auth, async (req, res) => {
 
 		//* validate user input
 		let errorJoi = await functions.validateData(update, JoiUpdateCardSchema);
-		if (errorJoi) return res.status(400).send("Oops Error ❌: " + errorJoi.details[0].message);
+		if (errorJoi) return res.status(400).send(" " + errorJoi.details[0].message);
 
 		//* check if card exist
 		let card = await Cards.find(filter);
-		if (card.length === 0) return res.status(400).send("Oops Error ❌: Document not updated - cannot find document");
+		if (card.length === 0) return res.status(400).send(" Document not updated - cannot find document");
 
 		//* card exist - update data
 		return await Cards.findOneAndUpdate(filter, update, { returnOriginal: false })
 			.then((doc) => res.status(200).send("Document updated ✅: " + doc))
-			.catch((err) => res.status(400).send("Oops Error ❌: Document not updated : " + err));
+			.catch((err) => res.status(400).send(" Document not updated : " + err));
 	} catch (error) {
-        return res.status(400).send("error in update document: " + error);
-    }
+		return res.status(400).send("error in update document: " + error);
+	}
 });
-
-
 
 module.exports = router;

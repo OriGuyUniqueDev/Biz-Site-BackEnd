@@ -61,6 +61,14 @@ let userSchema = new mongoose.Schema({
 		type: String,
 		required: false,
 	},
+	bizField: {
+		type: String,
+		required: false,
+	},
+	slogan: {
+		type: String,
+		required: false,
+	},
 });
 
 // add method to schema to add token to user documents

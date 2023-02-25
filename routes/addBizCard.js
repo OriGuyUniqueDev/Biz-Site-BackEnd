@@ -8,26 +8,17 @@ const _ = require("lodash");
 const router = express.Router();
 
 const formJoiSchema = Joi.object({
-	title: Joi.string().min(2).max(30).required(),
-	subTitle: Joi.string().min(2).max(30).required(),
-	description: Joi.string().min(10).max(1000).required(),
-	address: Joi.object({
-		state: Joi.string().min(2).max(30).required(),
-		city: Joi.string().min(2).max(30).required(),
-		street: Joi.string().min(2).max(30).required(),
-		houseNumber: Joi.number().integer(),
-		zip: Joi.string().min(5),
-	}),
-	image: Joi.object({
-		url: Joi.string().min(10).required(),
-		alt: Joi.string().min(2).required(),
-	}),
-	bizNumber: Joi.string().min(2).max(30).required(),
+	bizName: Joi.string().min(2).max(30).required(),
+	bizField: Joi.string().min(2).max(30).required(),
+	state: Joi.string().min(0).max(30),
+	country: Joi.string().min(2).max(30),
+	city: Joi.string().min(2).max(30).required(),
+	street: Joi.string().min(2).max(30).required(),
+	houseNumber: Joi.number().integer(),
+	imgUrl: Joi.string().min(10).required(),
+	imgAlt: Joi.string().min(2).required(),
 	phone: Joi.string().min(10).required(),
 	likes: Joi.array(),
-	web: Joi.string().min(10).required(),
-	email: Joi.string().email().required(),
-	createdAt: Joi.date(),
 });
 // bizName: Joi.string().min(2).max(30).required(),
 // 	description: Joi.string().min(10).max(1000).required(),
@@ -41,12 +32,14 @@ const formJoiSchema = Joi.object({
 router.post("/", auth, async (req, res) => {
 	// * validate user input
 	let errorJoi = await functions.validateData(req.body, formJoiSchema);
-	if (errorJoi) return res.status(400).send("Oops Error ❌: " + errorJoi.details[0].message);
+	if (errorJoi) return res.status(400).send(" " + errorJoi.details[0].message);
 
 	//* create the card and save in DB
 	let cardData = req.body;
 	cardData.uniqueNum = await findUniqueNumber(_.random(0, 1500, false));
+	cardData.likes = [];
 	cardData.userId = res.locals.user._id;
+	cardData;
 	let card = new Cards(cardData);
 	await card
 		.save()

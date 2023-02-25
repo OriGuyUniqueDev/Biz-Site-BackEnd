@@ -6,6 +6,7 @@ const router = express.Router();
 router.get("/", auth, async (req, res) => {
 	try {
 		let cardData = await Cards.find();
+		cardData;
 		if (cardData.length > 0) return res.status(200).send(cardData);
 		return res.status(400).send("Oops Error ❌ Cannot find Document");
 	} catch (error) {
