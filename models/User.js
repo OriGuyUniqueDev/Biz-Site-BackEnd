@@ -65,6 +65,10 @@ let userSchema = new mongoose.Schema({
 		type: String,
 		required: false,
 	},
+	favBiz: {
+		type: Array,
+		required: false,
+	},
 	slogan: {
 		type: String,
 		required: false,
