@@ -36,4 +36,4 @@ mongoose
 	.then((res) => console.log(res.connections[0].name))
 	.catch((err) => console.log(`couldn't Connect to MongoDB : ${err}`));
 
-app.listen(PORT, () => console.log(`http://localhost:${PORT}`));
+app.listen(PORT, () => console.log(`Runing on PORT: ${PORT}`));

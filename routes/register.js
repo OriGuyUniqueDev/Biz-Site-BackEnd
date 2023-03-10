@@ -39,6 +39,7 @@ router.post("/", async (req, res) => {
 		//*add new user
 		user = new User(req.body);
 		user.password = await bcrypt.hash(user.password, saltRounds).catch((err) => err);
+		user.favBiz = [];
 		let accessToken = await user.generateAuthToken();
 		await user.save();
 		return res.status(201).send({
